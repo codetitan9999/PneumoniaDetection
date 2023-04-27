@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pneumonia Detection</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet">   
+    <script src="{{ url_for('static', filename='js/index.js') }}" type="text/javascript"></script> 
+</head>
+<body>
+    <div class = "container">
+        <div class="card" style="width: 25rem;">
+              <h5 class="card-title">Drop Your Chest X-Ray Here</h5>
+            <div class="card-body">
+                <div id="content">
+                      <form id="upload-file" method="post" enctype="multipart/form-data">
+                          <label for="imageUpload" class="upload-label">
+                              Select Image
+                          </label>
+                          <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+                      </form>
+                  
+                      <div class="image-section" style="display:none;">
+                          <div class="img-preview">
+                              <div id="imagePreview">
+                              </div>
+                          </div>
+                          <div class="text-center">
+                              <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>
+                          </div>
+                      </div>
+                  
+                      <div class="loader" style="display:none;"></div>
+                  
+                      <h3 id="result">
+                          <span> </span>
+                      </h3>
+            </div>
+          </div>
+    </div>
+</body>
+</html>
